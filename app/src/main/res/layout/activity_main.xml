@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/resultContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/outputImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <FrameLayout
+    android:id="@+id/cameraContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include layout="@layout/camera_overlay" />
+    </FrameLayout>>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/cameraControls"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="16dp"-->
+<!--        android:visibility="gone">-->
+<!--        <Button-->
+<!--            android:id="@+id/captureButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Capture" />-->
+<!--    </LinearLayout>-->
+
+    <FrameLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <include layout="@layout/layout_loading" />
+
+    </FrameLayout>
+
+
+
+    <Button
+        android:id="@+id/singleImagePickBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Single Image Picker" />
+
+    <Button
+        android:id="@+id/takePictureBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Picture" />
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="355dp"
+        android:layout_height="130dp"
+        android:autoStart="true"
+        android:flipInterval="3000" />
+
+    <!--EditText with id editText-->
+
+    <!--Button with id showInput-->
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Input question"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/showInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="predict"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/warningTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="gone" />
+
+
+</LinearLayout>
